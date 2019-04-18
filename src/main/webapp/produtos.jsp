@@ -19,10 +19,10 @@
             <hr>
             <div>
                 <button type="button" class="cadbutton">
-                    <a href="http://localhost:8084/noobies/cadastro-produtos.jsp">﻿CADASTRAR PRODUTOS</a>
+                    <a href="http://localhost:8084/NoobiesTestes/cadastrar-produtos.jsp">﻿CADASTRAR PRODUTOS</a>
                 </button>
                 <button type="button" class="consbutton">    
-                    <a href="http://localhost:8084/noobies/consultar-produtos.jsp">﻿CONSULTAR PRODUTOS</a>
+                    <a href="http://localhost:8084/NoobiesTestes/consultar-produtos.jsp">﻿CONSULTAR PRODUTOS</a>
                 </button>
                 
             </div>

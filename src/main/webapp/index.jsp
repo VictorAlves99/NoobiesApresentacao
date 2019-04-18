@@ -23,7 +23,7 @@
         <br><br>
         <div class="botoesCenter">
             <button>
-                <a href="http://localhost:8084/noobies/produtos.jsp"><img src="img/prods.png"/></a>
+                <a href="http://localhost:8084/NoobiesTestes/produtos.jsp"><img src="img/prods.png"/></a>
             </button>
         </div>
         <div class="botoesCanto">

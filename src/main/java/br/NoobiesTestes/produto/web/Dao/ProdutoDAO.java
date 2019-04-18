@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class ProdutoDAO {
 
-    public void incluirProduto(Produto produto){
+    public static void incluirProduto(Produto produto){
         {
 
         //Abrir conexao e deixa ela null
@@ -70,7 +70,7 @@ public class ProdutoDAO {
     }
 }
     //incompleto
-    public void excluirProduto(int id){
+    public static void excluirProduto(int id){
         {
         PreparedStatement stmt = null;
         Connection conn = null;
@@ -118,7 +118,7 @@ public class ProdutoDAO {
         }
     }
     }
-    public void editarProduto(Produto produto){
+    public static void editarProduto(Produto produto){
         //Abrir conexao e deixa ela null
         PreparedStatement stmt = null;
         Connection conn = null;
@@ -174,7 +174,7 @@ public class ProdutoDAO {
             }
         }
     }
-    public void consultarProduto(Produto produto){
+    public static void consultarProduto(Produto produto){
                 //Abrir conexao e deixa ela null
         PreparedStatement stmt = null;
         Connection conn = null;

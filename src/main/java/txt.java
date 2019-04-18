@@ -1,12 +1,36 @@
 
 public class txt {
-    /*<h1>Resultado do Cadastro de Cliente<c:out value="${metodoHttp}"/></h1>
-    <div>
-    <div>Nome: <c:out value="${param.nome}" /></div>
-    <div>Descrição: <c:out value="${param.descricao}" /></div>
-    <div>valor de Compra: <c:out value="${param.valorCompra}"/></div>
-    <div>valor de Venda: <c:out value="${param.valorVenda}" /></div>
-    <div>Quantidade: <c:out value="${param.quantidade}" /></div>
-    <div>Categoria: <c:out value="${param.categoria}" /></div>
-    </div>*/
+    /*//        // VALIDAR DADOS
+//        boolean temErros = false;
+//        
+//        if (produto.get == null || nome.length() == 0) {
+//            temErros = true;
+//            request.setAttribute("erroNome", "Nome não preenchido");
+//        }
+//        if ( descricao == null || descricao.length() == 0) {
+//            temErros = true;
+//            request.setAttribute("erroDescricao", "Descrição não preenchido");
+//        }
+//        if (valorVenda == null || valorVenda.length() == 0) {
+//            temErros = true;
+//            request.setAttribute("erroValorCompra", "Valor de Compra não preenchido");
+//        }
+//        if (valorCompra == null || valorCompra.length() == 0) {
+//            temErros = true;
+//            request.setAttribute("erroValorVenda", "Valor de Venda não preenchido");
+//        }
+//        if (quantidade == null || quantidade.length() == 0) {
+//            temErros = true;
+//            request.setAttribute("erroQuantidade", "Quantidade não preenchido");
+//        }
+//        if (categoria == null || categoria.length() == 0) {
+//            temErros = true;
+//            request.setAttribute("erroCategoria", "Categoria não preenchido");
+//        }
+//        
+//        if (temErros) {
+//            // REAPRESENTA FORMULARIO INDICANDO OS ERROS
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("formularioProduto.jsp");
+//            dispatcher.forward(request, response);
+//        }*/
 }

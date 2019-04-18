@@ -23,7 +23,7 @@
         <hr>
         <br><br>
         <div>
-            <form action="resultadoProduto.jsp" method="post">
+            <form action="produto" method="post">
                 <div class="divNome">
                     <p>Nome do Produto:</p>
                 </div>
