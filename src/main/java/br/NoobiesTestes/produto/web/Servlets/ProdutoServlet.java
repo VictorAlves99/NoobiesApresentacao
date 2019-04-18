@@ -37,28 +37,28 @@ public class ProdutoServlet extends HttpServlet {
         }
         if ( descricao == null || descricao.length() == 0) {
             temErros = true;
-            request.setAttribute("erroCPF", "CPF não preenchido");
+            request.setAttribute("erroDescricao", "Descrição não preenchido");
         }
         if (valorVenda == null || valorVenda.length() == 0) {
             temErros = true;
-            request.setAttribute("erroEndereco", "Endereco não preenchido");
+            request.setAttribute("erroValorCompra", "Valor de Compra não preenchido");
         }
         if (valorCompra == null || valorCompra.length() == 0) {
             temErros = true;
-            request.setAttribute("erroTelefone", "Telefone não preenchido");
+            request.setAttribute("erroValorVenda", "Valor de Venda não preenchido");
         }
         if (quantidade == null || quantidade.length() == 0) {
             temErros = true;
-            request.setAttribute("erroEmail", "E-mail não preenchido");
+            request.setAttribute("erroQuantidade", "Quantidade não preenchido");
         }
         if (categoria == null || categoria.length() == 0) {
             temErros = true;
-            request.setAttribute("erroEmail", "E-mail não preenchido");
+            request.setAttribute("erroCategoria", "Categoria não preenchido");
         }
 
         if (temErros) {
             // REAPRESENTA FORMULARIO INDICANDO OS ERROS
-            RequestDispatcher dispatcher = request.getRequestDispatcher("formularioCliente.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("formularioProduto.jsp");
             dispatcher.forward(request, response);
         }
 
@@ -72,7 +72,7 @@ public class ProdutoServlet extends HttpServlet {
         request.setAttribute("categoria", categoria);
         
         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("/WEB-INF/jsp/resultadoCliente.jsp");
+                = request.getRequestDispatcher("resultadoProduto.jsp");
         dispatcher.forward(request, response); 
     }
 

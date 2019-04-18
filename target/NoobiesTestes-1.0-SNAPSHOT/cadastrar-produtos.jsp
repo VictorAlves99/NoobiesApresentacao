@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,13 +29,20 @@
                 </div>
                 <div class="divNomeInput">
                     <input name="nome" type="text" required>
+                    <c:if test="${not empty erroNome}">
+                        <div style="background-color: lightcoral"><c:out value="${erroNome}" /></div>
+                    </c:if>
                 </div>
+                
                 <div class="divDescricao">
                     <p>Descrição do Produto:</p>
                 </div>
                 <div class="divDescricaoTxtArea">
                     <textarea name="descricao">
                     </textarea>
+                    <c:if test="${not empty erroDescricao}">
+                        <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
+                    </c:if>
                 </div>
                 <div class="divValorCV">
                     <p>Valor de Compra:</p>
@@ -43,7 +50,13 @@
                 </div>
                 <div class="divValoresInput">
                     <input name="valorCompra" type="text" required>
+                    <c:if test="${not empty erroValorCompra}">
+                        <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
+                    </c:if>                    
                     <input name="valorVenda" type="text" required>
+                    <c:if test="${not empty erroValorVenda}">
+                        <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
+                    </c:if>
                 </div>
                 <div class="divQTDCAT">
                     <p>Quantidade:</p>
@@ -51,6 +64,9 @@
                 </div>
                 <div class="divQTDCATInput">
                     <input name="quantidade" type="text" required>
+                    <c:if test="${not empty erroQuantidade}">
+                        <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
+                    </c:if>
                     <select name="categoria">
                         <option value="">Selecione uma Categoria...</option>
                         <option value="PS4">PS4</option>
@@ -59,6 +75,9 @@
                         <option value="TABULEIRO">Tabuleiro</option>
                         <option value="PC">PC</option>
                     </select>
+                    <c:if test="${not empty erroCategoria}">
+                        <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
+                    </c:if>
                 </div>
                 <br><br><br>
                 <div class="divBotao">
