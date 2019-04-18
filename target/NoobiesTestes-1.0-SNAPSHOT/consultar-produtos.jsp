@@ -42,11 +42,11 @@
                 <div>
                     <table class="tabela">
                         <tr class="linhaPrinc">
-                            <td>ID</td>
-                            <td>NOME</td>
-                            <td>V.COMPRA</td>
-                            <td>V.VENDA</td>
-                            <td>QUANT</td>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>V.COMPRA</th>
+                            <th>V.VENDA</th>
+                            <th>QUANT</th>
                         </tr>
                         <tr class="linhaSec">
                             <td></td>

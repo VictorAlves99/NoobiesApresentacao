@@ -1,4 +1,4 @@
-package br.NoobiesTestes.produto.web.Servlets;
+/*package br.NoobiesTestes.produto.web.Servlets;
 
 import java.io.IOException;
 
@@ -9,26 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author gabriela.vsmarques
- */
 @WebServlet(name = "ProdutoServlet", urlPatterns = {"/produto"})
 public class ProdutoServlet extends HttpServlet {
-
-        protected void processRequest(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
+    
+    protected void processRequest(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-            // RECUPERA INFORMACOES DA REQUISICAO
-            String nome = request.getParameter("nome");
-            String descricao = request.getParameter("descricao");
-            String valorVenda = request.getParameter("valorVenda");
-            String valorCompra = request.getParameter("valorCompra");
-            String quantidade = request.getParameter("quantidade");
-            String categoria = request.getParameter("categoria");
-
-            
-             // VALIDAR DADOS
+        
+        // RECUPERA INFORMACOES DA REQUISICAO
+        String nome = request.getParameter("nome");
+        String descricao = request.getParameter("descricao");
+        String valorVenda = request.getParameter("valorVenda");
+        String valorCompra = request.getParameter("valorCompra");
+        String quantidade = request.getParameter("quantidade");
+        String categoria = request.getParameter("categoria");
+        
+        
+        // VALIDAR DADOS
         boolean temErros = false;
         
         if (nome == null || nome.length() == 0) {
@@ -37,31 +33,31 @@ public class ProdutoServlet extends HttpServlet {
         }
         if ( descricao == null || descricao.length() == 0) {
             temErros = true;
-            request.setAttribute("erroCPF", "CPF não preenchido");
+            request.setAttribute("erroDescricao", "Descrição não preenchido");
         }
         if (valorVenda == null || valorVenda.length() == 0) {
             temErros = true;
-            request.setAttribute("erroEndereco", "Endereco não preenchido");
+            request.setAttribute("erroValorCompra", "Valor de Compra não preenchido");
         }
         if (valorCompra == null || valorCompra.length() == 0) {
             temErros = true;
-            request.setAttribute("erroTelefone", "Telefone não preenchido");
+            request.setAttribute("erroValorVenda", "Valor de Venda não preenchido");
         }
         if (quantidade == null || quantidade.length() == 0) {
             temErros = true;
-            request.setAttribute("erroEmail", "E-mail não preenchido");
+            request.setAttribute("erroQuantidade", "Quantidade não preenchido");
         }
         if (categoria == null || categoria.length() == 0) {
             temErros = true;
-            request.setAttribute("erroEmail", "E-mail não preenchido");
+            request.setAttribute("erroCategoria", "Categoria não preenchido");
         }
-
+        
         if (temErros) {
             // REAPRESENTA FORMULARIO INDICANDO OS ERROS
-            RequestDispatcher dispatcher = request.getRequestDispatcher("formularioCliente.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("formularioProduto.jsp");
             dispatcher.forward(request, response);
         }
-
+        
         // ARMAZENANDO VALORES COMO ATRIBUTOS
         request.setAttribute("metodoHttp", metodoHttp);
         request.setAttribute("nome", nome);
@@ -72,10 +68,10 @@ public class ProdutoServlet extends HttpServlet {
         request.setAttribute("categoria", categoria);
         
         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("/WEB-INF/jsp/resultadoCliente.jsp");
-        dispatcher.forward(request, response); 
+                = request.getRequestDispatcher("resultadoProduto.jsp");
+        dispatcher.forward(request, response);
     }
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -87,7 +83,6 @@ public class ProdutoServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest("POST",request, response);
     }
-
-
-}
-
+    
+    
+}*/
