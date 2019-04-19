@@ -33,4 +33,33 @@ public class txt {
 //            RequestDispatcher dispatcher = request.getRequestDispatcher("formularioProduto.jsp");
 //            dispatcher.forward(request, response);
 //        }*/
+
+
+
+
+    /*
+        <tr class="linhaSec">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="linhaSec">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="linhaSec">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+    */
+
+
 }

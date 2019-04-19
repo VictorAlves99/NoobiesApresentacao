@@ -2,9 +2,16 @@ package br.NoobiesTestes.produto.web.Dao;
 
 import br.NoobiesTestes.produto.web.Models.Produto;
 import static br.NoobiesTestes.produto.web.db.utils.ConnectionUtils.obterConexao;
+import com.mysql.cj.jdbc.JdbcConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ProdutoDAO {
 
@@ -70,6 +77,41 @@ public class ProdutoDAO {
     }
 }
     //incompleto
+    public List<Produto> listarProdutos() throws SQLException, ClassNotFoundException{
+        
+        List<Produto> listaProdutos = new ArrayList<>();
+        
+        Statement stmt = null;
+        Connection conn = null;
+        ResultSet resultSet = null;
+        //Preparar string sql
+        String sql = "SELECT * FROM produtos";
+        
+        //Obten conexão para SQL workbench
+        conn = obterConexao();
+
+        stmt = conn.createStatement();
+        resultSet = stmt.executeQuery(sql);
+
+        while(resultSet.next()){
+            int id = resultSet.getInt("id");
+            String nome = resultSet.getString("nome");
+            double valorCompra = resultSet.getDouble("valorCompra");
+            double valorVenda = resultSet.getDouble("valorVenda");
+            int quantidade = resultSet.getInt("quantidade");
+
+            Produto produto = new Produto();
+            listaProdutos.add(produto);
+        }
+
+        resultSet.close();
+        stmt.close();
+
+        conn.close();
+
+        return listaProdutos;
+    }
+            
     public static void excluirProduto(int id){
         {
         PreparedStatement stmt = null;
@@ -229,4 +271,6 @@ public class ProdutoDAO {
             }
         }
     }
+    
+    
 }

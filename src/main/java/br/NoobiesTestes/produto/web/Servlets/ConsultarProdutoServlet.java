@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ProdutoServlet", urlPatterns = {"/produto"})
+@WebServlet(name = "ConsultarProdutoServlet", urlPatterns = {"/consultar"})
 public class ConsultarProdutoServlet extends HttpServlet {
     
     protected void processRequest(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
@@ -27,9 +27,6 @@ public class ConsultarProdutoServlet extends HttpServlet {
         produto.setValorVenda(Float.parseFloat(request.getParameter("valorCompra")));
         produto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         produto.setCategoria(request.getParameter("categoria"));
-        
-        
-
 
         ProdutoDAO.incluirProduto(produto);
         

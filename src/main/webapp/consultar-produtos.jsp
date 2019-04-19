@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +11,8 @@
         <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
         <script defer src="js/consultar-produtos.js"></script>
     </head>
-    <body>        
+    <body>
+        
         <div id="fixed">
             <header>
                 <div>
@@ -48,39 +49,20 @@
                             <th>V.VENDA</th>
                             <th>QUANT</th>
                         </tr>
-                        <tr class="linhaSec">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="linhaSec">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="linhaSec">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="linhaSec">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <c:forEach var="produto" items="${listaProdutos}">
+                            <tr class="linhaSec">
+                                <td><c:out value="${produto.id}" /></td>
+                                <td><c:out value="${produto.nome}" /></td>
+                                <td><c:out value="${produto.valorCompra}" /></td>
+                                <td><c:out value="${produto.valorVenda}" /></td>
+                                <td><c:out value="${produto.quantidade}" /></td>
+                            </tr>
+                        </c:forEach>
                     </table>
                 </div>
                 <div class="pesquisaExc">
-                    <div>
-                        <h4>Pesquisa</h4>
+                    <div class="Pesquisa">
+                        <h4>Pesquisa</h4><div class="one"></div><a href="">Listar Todos</a>
                     </div>
                     <div class="inputPesq">
                         <form action="">
