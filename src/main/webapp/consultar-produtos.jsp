@@ -9,7 +9,6 @@
         <title>Consulta de Produtos</title>
         <link rel="stylesheet" href="css/consultar-produtos.css">
         <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-        <script defer src="js/consultar-produtos.js"></script>
     </head>
     <body>
         
