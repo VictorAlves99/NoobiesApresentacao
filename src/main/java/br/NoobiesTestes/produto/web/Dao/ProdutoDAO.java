@@ -15,9 +15,10 @@ import java.util.logging.Logger;
 
 public class ProdutoDAO {
 
-    public static void incluirProduto(Produto produto){
+    public static boolean incluirProduto(Produto produto){
         {
-
+        boolean retorno = false;
+        int linhasAfetadas = 0;
         //Abrir conexao e deixa ela null
         PreparedStatement stmt = null;
         Connection conn = null;
@@ -40,7 +41,13 @@ public class ProdutoDAO {
             stmt.setString(6, produto.getCategoria());         
 
             // 2) Executar SQL
-            stmt.executeUpdate();
+            linhasAfetadas = stmt.executeUpdate();
+            if (linhasAfetadas > 0) {
+                retorno = true;
+            } else {
+                retorno = false;
+            }
+            
         } 
         catch (SQLException ex) 
         {
@@ -74,6 +81,7 @@ public class ProdutoDAO {
                 }
             }
         }
+        return retorno;
     }
 }
     //incompleto
@@ -94,11 +102,11 @@ public class ProdutoDAO {
         resultSet = stmt.executeQuery(sql);
 
         while(resultSet.next()){
-            int id = resultSet.getInt("id");
-            String nome = resultSet.getString("nome");
-            double valorCompra = resultSet.getDouble("valorCompra");
-            double valorVenda = resultSet.getDouble("valorVenda");
-            int quantidade = resultSet.getInt("quantidade");
+            resultSet.getInt("id");
+            resultSet.getString("nome");
+            resultSet.getDouble("valorCompra");
+            resultSet.getDouble("valorVenda");
+            resultSet.getInt("quantidade");
 
             Produto produto = new Produto();
             listaProdutos.add(produto);
@@ -106,7 +114,6 @@ public class ProdutoDAO {
 
         resultSet.close();
         stmt.close();
-
         conn.close();
 
         return listaProdutos;

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ProdutoServlet", urlPatterns = {"/produto"})
+@WebServlet(name = "ProdutoServlet", urlPatterns = {"/CadastrarProduto"})
 public class CadastrarProdutoServlet extends HttpServlet {
     
     protected void processRequest(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
@@ -23,8 +23,8 @@ public class CadastrarProdutoServlet extends HttpServlet {
         // RECUPERA INFORMACOES DA REQUISICAO
         produto.setNomeProd(request.getParameter("nome"));
         produto.setDescProd(request.getParameter("descricao"));
-        produto.setValorCompra(Float.parseFloat(request.getParameter("valorVenda")));
-        produto.setValorVenda(Float.parseFloat(request.getParameter("valorCompra")));
+        produto.setValorCompra(Float.parseFloat(request.getParameter("valorCompra")));
+        produto.setValorVenda(Float.parseFloat(request.getParameter("valorVenda")));
         produto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
         produto.setCategoria(request.getParameter("categoria"));
         
@@ -63,7 +63,14 @@ public class CadastrarProdutoServlet extends HttpServlet {
 //            dispatcher.forward(request, response);
 //        }
 
-        ProdutoDAO.incluirProduto(produto);
+        boolean retorno = ProdutoDAO.incluirProduto(produto);
+        if(retorno){
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/consultar-produtos.jsp");
+            dispatcher.forward(request, response);
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastrar-produtos.jsp");
+            dispatcher.forward(request, response);
+        }
         
         
         
