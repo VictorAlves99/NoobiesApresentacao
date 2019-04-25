@@ -36,7 +36,7 @@
         </div>
         <div class="botoesCenter">
             <button>
-                <a href="http://localhost:8084/noobies/adm.jsp"><img src="img/adm.png"></a>
+                <a href="http://localhost:8084/noobies/consultar-clientes.jsp"><img src="img/adm.png"></a>
             </button>
         </div>
         <footer>

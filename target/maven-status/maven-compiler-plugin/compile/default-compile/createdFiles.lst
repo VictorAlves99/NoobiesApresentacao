@@ -1,6 +1,6 @@
 br\NoobiesTestes\produto\web\Servlets\ConsultarProdutoServlet.class
+br\NoobiesTestes\produto\web\db\utils\ConnectionUtils.class
+br\NoobiesTestes\produto\web\Servlets\CadastrarProdutoServlet.class
 txt.class
 br\NoobiesTestes\produto\web\Dao\ProdutoDAO.class
-br\NoobiesTestes\produto\web\db\utils\ConnectionUtils.class
 br\NoobiesTestes\produto\web\Models\Produto.class
-br\NoobiesTestes\produto\web\Servlets\CadastrarProdutoServlet.class
